@@ -53,7 +53,6 @@ export const Button = styled.button`
     &:hover{
         background-color: ${COLORS.BACKGROUND};
         color: ${COLORS.PRIMARY_900};
-        font-weight: 700;
         border:2px solid ${COLORS.PRIMARY_900};
     }
 `;
