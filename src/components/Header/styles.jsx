@@ -3,7 +3,7 @@ import { COLORS, FONTS } from '../../global/theme';
 
 export const Container = styled.header`
     width: 100%;
-    height: 4rem;
+    height: 5rem;
     /* background-color: ${COLORS.PRIMARY_800}; */
 
     display: flex;
@@ -13,7 +13,7 @@ export const Container = styled.header`
 
 export const Menu = styled.ul`
     height: 3rem;
-    margin: 0 2rem 0 2rem;
+    margin: 0 4rem 0 4rem;
     display: flex;
     align-items: center;
     justify-content: center;

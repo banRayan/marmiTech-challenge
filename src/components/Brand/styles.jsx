@@ -6,7 +6,7 @@ export const Container = styled.div`
      align-items: center;
      justify-content: center;
 
-     margin: 0 2rem 0 2rem;
+     margin: 0 4rem 0 4rem;
 `;
 
 export const Title = styled.h1`

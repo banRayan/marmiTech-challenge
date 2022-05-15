@@ -1,11 +1,14 @@
-import GlobalStyle from "./global/GlobalStyle"
-import Home from "./screens/Home"
+import GlobalStyle from "./global/GlobalStyle";
+import { BrowserRouter as Router } from 'react-router-dom';
+import MainRoutes from "./routes/routes";
 
 function App() {
   return (
     <>
-      <Home />
-      <GlobalStyle />
+      <Router>
+        <MainRoutes />
+        <GlobalStyle />
+      </Router>
     </>
   )
 }

@@ -11,12 +11,13 @@ export const Container = styled.div`
 `;
 
 export const MainContent = styled.main`
-    height: 100%;
+    height: 80%;
     width: 100%;
-    padding: 7rem;
+    /* padding: 8rem; */
 
     display: flex;
     justify-content: center;
+    align-items: center;
 `;
 
 export const Slogan = styled.div`
@@ -43,7 +44,7 @@ export const Description = styled.p`
 export const Button = styled.button`
     background-color: ${COLORS.PRIMARY_900};
     color: ${COLORS.BACKGROUND};
-    font: ${FONTS.TITLE_500} ${FONTS.MAIN};
+    font: 500 1.5rem ${FONTS.MAIN};
     padding:.8rem 3rem;
     border-radius: 8px;
     border: none;
@@ -51,8 +52,16 @@ export const Button = styled.button`
     transition: .2s;
 
     &:hover{
-        background-color: ${COLORS.BACKGROUND};
-        color: ${COLORS.PRIMARY_900};
-        border:2px solid ${COLORS.PRIMARY_900};
+        background-color:   ${COLORS.PRIMARY_800};
+        color: ${COLORS.BACKGROUND};
+        /* border:2px solid ${COLORS.PRIMARY_900}; */
     }
+`;
+
+//chart container
+
+export const Chart = styled.div`
+    width: 600px;
+    height: 600px;
+    /* background-color: grey; */
 `;
