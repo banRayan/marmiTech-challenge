@@ -1,22 +1,22 @@
 import Brand from "../Brand";
-import { Container, Link, Menu, MenuItem } from "./styles";
+import { Link } from "react-router-dom";
+
+import { Container, Menu, MenuItem } from "./styles";
 
 const Header = () => {
     return (
         <Container>
             <Brand />
             <Menu>
-                <Link href="#">
+                <Link style={{ textDecoration: 'none' }} to={'/'}>
                     <MenuItem>Home</MenuItem>
                 </Link>
-                <Link href="#">
-                    <MenuItem>Features</MenuItem>
-                </Link>
-                <Link href="#">
+                <MenuItem>Features</MenuItem>
+                <Link style={{ textDecoration: 'none' }} to={'/contact'}>
                     <MenuItem>Contact</MenuItem>
                 </Link>
             </Menu>
-        </Container>
+        </Container >
     )
 }
 export default Header;

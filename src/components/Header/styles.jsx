@@ -11,17 +11,20 @@ export const Container = styled.header`
     justify-content: space-between;
 `;
 
-export const Menu = styled.ul`
+export const Menu = styled.div`
     height: 3rem;
     margin: 0 4rem 0 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-`;
+    `;
 
-export const MenuItem = styled.li`
+export const MenuItem = styled.p`
     font: ${FONTS.TEXT_500} ${FONTS.MAIN};
+    color: black;
     padding: 1rem;
+    text-decoration: none;
+    
 
     display: flex;
     align-items: center;
@@ -35,9 +38,4 @@ export const MenuItem = styled.li`
         font-weight: 700;
         border-radius: 1px;
     }
-`;
-
-export const Link = styled.a`
-    text-decoration: none;
-    color: black;
 `;
