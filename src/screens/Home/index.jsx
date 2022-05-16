@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { useNavigate } from "react-router-dom";
 import { Doughnut } from 'react-chartjs-2';
+import { useAuth } from "../../context/Auth";
+
 
 ChartJS.register(ArcElement, Tooltip, Legend);
+
 
 import Header from "../../components/Header";
 
@@ -16,20 +19,10 @@ import {
     Slogan,
     Title
 } from "./styles";
-import { COLORS } from "../../global/theme";
 
 const Home = () => {
-
-    const [repo, setRepo] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            await axios.get(`https://api.github.com/repos/banRayan/marmiTech-challenge`)
-                .then(response => setRepo(response.data));
-        }
-        fetchData()
-    }, [])
-
+    const { repo } = useAuth();
+    const navigate = useNavigate();
 
     const data = {
         labels: [`Views ${repo.watchers}`, `Stars ${repo.stargazers_count}`, `Subs ${repo.subscribers_count}`, `Forks ${repo.forks_count}`],
@@ -62,7 +55,7 @@ const Home = () => {
                 <Slogan>
                     <Title>Create amazing graphics</Title>
                     <Description>Collaborate and create beautiful graphics with your team</Description>
-                    <Button>Start now</Button>
+                    <Button onClick={() => navigate('/custom')}>Start now</Button>
                 </Slogan>
                 <Chart>
                     <Doughnut

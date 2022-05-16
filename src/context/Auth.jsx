@@ -8,7 +8,7 @@ export const AuthProvider = (props) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            await axios.get(`https://api.github.com/users/banRayan`)
+            await axios.get(`https://api.github.com/repos/banRayan/marmiTech-challenge`)
                 .then(response => setRepo(response.data));
         }
 

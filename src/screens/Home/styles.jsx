@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const MainContent = styled.main`
-    height: 80%;
+    height: 100%;
     width: 100%;
     /* padding: 8rem; */
 

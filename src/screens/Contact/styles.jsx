@@ -38,7 +38,7 @@ export const SocialCard = styled.a`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transform: .4s;
+    transform: 1s;
 
     p{
         font: 600 1.2rem ${FONTS.MAIN};
@@ -46,5 +46,7 @@ export const SocialCard = styled.a`
 
     &:hover{
         transform: translateY(-2rem);
+        color: ${COLORS.PRIMARY_900};
+        border: 3px solid ${COLORS.PRIMARY_900};
     }
 `;

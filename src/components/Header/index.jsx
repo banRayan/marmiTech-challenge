@@ -11,7 +11,9 @@ const Header = () => {
                 <Link style={{ textDecoration: 'none' }} to={'/'}>
                     <MenuItem>Home</MenuItem>
                 </Link>
-                <MenuItem>Features</MenuItem>
+                <Link style={{ textDecoration: 'none' }} to={'/features'}>
+                    <MenuItem>Features</MenuItem>
+                </Link>
                 <Link style={{ textDecoration: 'none' }} to={'/contact'}>
                     <MenuItem>Contact</MenuItem>
                 </Link>

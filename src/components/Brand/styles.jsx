@@ -13,3 +13,7 @@ export const Title = styled.h1`
     color: ${COLORS.PRIMARY_900};
     font: 600 1.5rem ${FONTS.MAIN};
 `;
+
+export const Link = styled.a`
+    text-decoration: none;
+`;
