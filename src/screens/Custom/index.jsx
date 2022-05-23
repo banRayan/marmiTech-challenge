@@ -8,11 +8,19 @@ import Header from "../../components/Header";
 import { Button, Chart, ChartsButton, ChartsButtonContainer, Container, InputContainer, InputLabels, InputValue, MainContent, Title, Warn } from "./styles";
 
 const Custom = () => {
+    const [dataTitle, setDataTitle] = useState([]);
+    const [inputDataTitle, setInputDataTitle] = useState();
+    const [dataValue, setDataValue] = useState([]);
+    const [inputDataValue, setInputDataValue] = useState();
+
+    const [booleanCharts, setBooleanCharts] = useState(false)
+
+    /*
     const [dataNumber, setDataNumber] = useState([1, 2, 3]);
     const [inputNumber, setInputNumber] = useState([]);
     const [dataString, setDataString] = useState(['Views', 'Stars', 'Forks']);
     const [inputString, setInputString] = useState([]);
-    const [booleanCharts, setBooleanCharts] = useState(false)
+  
 
 
 
@@ -28,6 +36,28 @@ const Custom = () => {
             numberArray.push(parseInt(number[i]));
         setDataNumber(numberArray);
     }
+*/
+    const handleInputData = () => {
+        const newDataTitles = [
+            ...dataTitle,
+            inputDataTitle
+        ]
+
+        setDataTitle(newDataTitles)
+
+        const newDataValue = [
+            ...dataValue,
+            inputDataValue
+        ]
+
+        const arrayValue = []
+        let lenght = newDataValue.length;
+        for (let i = 0; i < lenght; i++)
+            arrayValue.push(parseInt(newDataValue[i]))
+
+
+        setDataValue(arrayValue)
+    }
 
     const toggleChart = () => {
         setBooleanCharts(toggle => !toggle);
@@ -35,11 +65,11 @@ const Custom = () => {
     }
 
     const data = {
-        labels: dataString,
+        labels: dataTitle,
         datasets: [
             {
                 label: '# of Votes',
-                data: dataNumber,
+                data: dataValue,
                 backgroundColor: [
                     'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
@@ -70,17 +100,21 @@ const Custom = () => {
                     <InputLabels>Custom Titles</InputLabels>
                     <InputValue
                         type='text'
-                        onChange={e => setInputString(e.target.value)}
-                        placeholder='Views, Stars, Forks'
+                        onChange={e => setInputDataTitle(e.target.value)}
+                        placeholder='Stars'
+                        required
                     />
                     <InputLabels>Custom Values</InputLabels>
                     <InputValue
-                        type='text'
-                        onChange={e => setInputNumber(e.target.value)}
-                        placeholder='1, 2, 3'
+                        type='number'
+                        onChange={e => setInputDataValue(e.target.value)}
+                        placeholder='4'
+                        required
                     />
+                    <Button onClick={handleInputData}>To send</Button>
 
-                    <Button onClick={handleNumberInput}>To send</Button>
+
+
                 </InputContainer>
                 <Chart>
                     {
@@ -99,8 +133,11 @@ const Custom = () => {
                                 height={500}
                                 options={{ maintainAspectRatio: false }}
                             />
+
                     }
                 </Chart>
+
+
                 <InputContainer>
                     <ChartsButtonContainer>
                         <ChartsButton onClick={toggleChart}>Toggle Chart <ChartPie size={32} style={{ marginLeft: 16 }} /></ChartsButton>
