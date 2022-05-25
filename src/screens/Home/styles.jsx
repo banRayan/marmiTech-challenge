@@ -62,6 +62,6 @@ export const Button = styled.button`
 
 export const Chart = styled.div`
     width: 600px;
-    height: 600px;
+    height: 700px;
     /* background-color: grey; */
 `;

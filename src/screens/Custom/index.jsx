@@ -1,11 +1,24 @@
 import React, { useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut, Pie } from 'react-chartjs-2';
-import { ChartPie, ChartPieSlice } from 'phosphor-react';
+import { ChartPie } from 'phosphor-react';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 import Header from "../../components/Header";
-import { Button, Chart, ChartsButton, ChartsButtonContainer, Container, InputContainer, InputLabels, InputValue, MainContent, Title, Warn } from "./styles";
+
+import {
+    Button,
+    Chart,
+    ChartContainer,
+    ChartsButton,
+    ChartsButtonContainer,
+    Container,
+    InputContainer,
+    InputLabels,
+    InputValue,
+    MainContent,
+    Warn
+} from "./styles";
 
 const Custom = () => {
     const [dataTitle, setDataTitle] = useState([]);
@@ -15,28 +28,6 @@ const Custom = () => {
 
     const [booleanCharts, setBooleanCharts] = useState(false)
 
-    /*
-    const [dataNumber, setDataNumber] = useState([1, 2, 3]);
-    const [inputNumber, setInputNumber] = useState([]);
-    const [dataString, setDataString] = useState(['Views', 'Stars', 'Forks']);
-    const [inputString, setInputString] = useState([]);
-  
-
-
-
-    const handleNumberInput = () => {
-        const string = inputString.split(',');
-        setDataString(string)
-
-        const number = inputNumber.split(',');
-        let length = number.length;
-        const numberArray = [];
-
-        for (var i = 0; i < length; i++)
-            numberArray.push(parseInt(number[i]));
-        setDataNumber(numberArray);
-    }
-*/
     const handleInputData = () => {
         const newDataTitles = [
             ...dataTitle,
@@ -64,12 +55,16 @@ const Custom = () => {
         console.log(booleanCharts)
     }
 
+    const clearChart = () => {
+        setDataTitle([])
+        setDataValue([])
+    }
     const data = {
-        labels: dataTitle,
+        labels: dataTitle.length === 0 ? ['Star', 'Forks', 'Views'] : dataTitle,
         datasets: [
             {
                 label: '# of Votes',
-                data: dataValue,
+                data: dataValue.length === 0 ? [1, 2, 3] : dataValue,
                 backgroundColor: [
                     'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
@@ -96,7 +91,7 @@ const Custom = () => {
             <Header />
             <MainContent>
                 <InputContainer>
-                    <Warn>Insira os valores intercalando-os com vírgulas</Warn>
+                    <Warn>Insira o Título e Valor antes de enviar</Warn>
                     <InputLabels>Custom Titles</InputLabels>
                     <InputValue
                         type='text'
@@ -112,31 +107,30 @@ const Custom = () => {
                         required
                     />
                     <Button onClick={handleInputData}>To send</Button>
-
-
-
                 </InputContainer>
-                <Chart>
-                    {
-                        booleanCharts
-                            ?
-                            <Pie
-                                data={data}
-                                width={500}
-                                height={500}
-                                options={{ maintainAspectRatio: false }}
-                            />
-                            :
-                            <Doughnut
-                                data={data}
-                                width={500}
-                                height={500}
-                                options={{ maintainAspectRatio: false }}
-                            />
+                <ChartContainer>
+                    <Chart>
+                        {
+                            booleanCharts
+                                ?
+                                <Pie
+                                    data={data}
+                                    width={500}
+                                    height={500}
+                                    options={{ maintainAspectRatio: false }}
+                                />
+                                :
+                                <Doughnut
+                                    data={data}
+                                    width={500}
+                                    height={500}
+                                    options={{ maintainAspectRatio: false }}
+                                />
 
-                    }
-                </Chart>
-
+                        }
+                    </Chart>
+                    <Button onClick={clearChart}>Clean</Button>
+                </ChartContainer>
 
                 <InputContainer>
                     <ChartsButtonContainer>

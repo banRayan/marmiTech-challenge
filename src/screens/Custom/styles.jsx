@@ -27,10 +27,24 @@ export const Title = styled.h1`
     margin-bottom: 1rem;
 `;
 
+export const ChartContainer = styled.div`
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+
 export const Chart = styled.div`
     width: 600px;
-    height: 600px;
+    height: 700px;
     /* background-color: grey; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 `;
 
 export const InputContainer = styled.div`
