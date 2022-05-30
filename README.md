@@ -10,11 +10,6 @@ ____
 <img src="https://user-images.githubusercontent.com/84761488/168529426-791e9a52-95ec-4136-a534-6dcd54ef605c.png">
 <img src="https://user-images.githubusercontent.com/84761488/168529515-700bb750-7bba-4864-9aca-2ee2fc680cbc.png">
 
-<div align="center">
-	<img src="https://user-images.githubusercontent.com/84761488/168529661-0bed0e4d-28c5-413b-afb8-8bf83ccd52d8.png" width="500px">
-	<img src="https://user-images.githubusercontent.com/84761488/168529744-0d438b6e-9f94-40dd-b14c-bf4fb180ce1c.png" width="500px">
-</div>
-
 ## Sobre 
 
 <p>O desafio que escolhi como base foi o <a href="https://github.com/Lorenalgm/AmazingGraph">Amazing Graph</a>, o projeto consiste em uma Landing Page relacionada ao tema de construção de gráficos.</p>
