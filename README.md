@@ -1,6 +1,5 @@
 <h2 align="center">Custom Chart</h2>
 
-
 ## Sobre 
 
 <p>O projeto Custom Charts foi desenvolvido a partir de um desafio proposto pela educadora da Rocketseat <a href="https://www.instagram.com/jakeliny.gracielly/">Jakeliny Gracielly</a>.<br/>
@@ -40,21 +39,27 @@ ____
 
 ## Requisitos
 
-Antes de executar o projeto é necessário ter o <a href="https://nodejs.org/en/">Node</a> instalado
+Antes de executar o projeto é necessário ter o <a href="https://nodejs.org/en/">Node</a> e o <a href="https://www.npmjs.com">NPM</a> instalados
 
 ## Como executar?
 
-~~~javascript
-//clone o repositório
+```bash
+# clone o repositório
 $ git clone https://github.com/banRayan/marmiTech-challenge.git
 
-//acesse 
+# acesse 
 $ cd marmiTech-challenge
 
-//Instale as dependências 
+# Instale as dependências 
 $ npm install
 
-//Inicie o projeto
+# Inicie o projeto
 $ npm run dev
-~~~
+
+# O server será inicializado em http://localhost:3000
+```
+
+## Licença
+
+Este projeto está sob licença do MIT. Para obter mais detalhes, consulte o arquivo [LICENSE](LICENSE.md).
 
