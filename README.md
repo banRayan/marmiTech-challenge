@@ -61,5 +61,5 @@ $ npm run dev
 
 ## Licença
 
-Este projeto está sob licença do MIT. Para obter mais detalhes, consulte o arquivo [LICENSE](LICENSE.md).
+Este projeto está sob licença do MIT. Para obter mais detalhes, consulte o arquivo [LICENSE](LICENSE.txt).
 
